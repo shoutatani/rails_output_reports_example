@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    container_name: rails-dev-db
+    image: mysql:8.0
+    volumes:
+      - ./Rails/db/mysql-confd:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: rails_app_development
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpassword
+  app:
+    build: .
+    container_name: rails-dev-app
+    image: rails-dev-app
+    command: bash -c "/wait && /entrypoint.sh"
+    environment:
+      RAILS_ENV: development
+      RAILS_ROOT: /Rails
+      WAIT_HOSTS: db:3306
+    volumes:
+      - "./Rails/:/Rails"
+    ports:
+      - "9000:80"
+    depends_on:
+      - db
