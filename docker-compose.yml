@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    container_name: rails-dev-db
+    container_name: rails-output-reports-db
     image: mysql:8.0
     volumes:
       - ./Rails/db/mysql-confd:/etc/mysql/conf.d
@@ -12,8 +12,8 @@ services:
       MYSQL_PASSWORD: devpassword
   app:
     build: .
-    container_name: rails-dev-app
-    image: rails-dev-app
+    container_name: rails-output-reports-app
+    image: rails-output-reports-app
     command: bash -c "/wait && /entrypoint.sh"
     environment:
       RAILS_ENV: development
@@ -22,6 +22,6 @@ services:
     volumes:
       - "./Rails/:/Rails"
     ports:
-      - "9000:80"
+      - "9001:80"
     depends_on:
       - db

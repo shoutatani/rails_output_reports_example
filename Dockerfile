@@ -43,7 +43,7 @@ COPY ./Rails/Gemfile.lock ./Gemfile.lock
 COPY ./entrypoint.sh ../entrypoint.sh
 
 RUN set -x \
-&& bundle install --path vendor/bundle --jobs=4
+&& bundle install --jobs=4
 
 RUN set -x \
 && chmod o+x ../entrypoint.sh
