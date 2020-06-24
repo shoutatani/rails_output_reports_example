@@ -1,0 +1,8 @@
+<h1>Thinreports</h1>
+
+<%= form_with url: thin_reports_output_path do |form| %>
+
+  <%= form.text_field :github_user_name, placeholder: 'Enter your GitHUb user name', style: "width: 200px" %>
+
+  <%= form.submit "output_thin_reports' PDF with your GitHub user name." %>
+<% end %>
