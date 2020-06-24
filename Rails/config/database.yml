@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: rails_app_production
   username: rails_app
   password: <%= ENV['RAILSAPP_DATABASE_PASSWORD'] %>
