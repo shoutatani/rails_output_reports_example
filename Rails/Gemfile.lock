@@ -171,7 +171,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thinreports (0.11.0)
       prawn (~> 2.2.0)
     thor (1.0.1)
@@ -213,7 +212,6 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   thinreports
   tzinfo-data
   web-console (>= 3.3.0)
