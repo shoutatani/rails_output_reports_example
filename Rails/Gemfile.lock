@@ -108,6 +108,10 @@ GEM
     minitest (5.16.2)
     msgpack (1.5.3)
     mysql2 (0.5.4)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
     net-pop (0.1.1)
       digest
       net-protocol
@@ -193,6 +197,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    strscan (3.0.3)
     thinreports (0.12.1)
       prawn (~> 2.2)
       rexml
@@ -231,6 +236,7 @@ DEPENDENCIES
   listen (~> 3.2)
   matrix
   mysql2 (>= 0.4.4)
+  net-imap
   net-pop
   net-smtp
   pg
