@@ -1,4 +1,4 @@
-ARG VERSION="2.7.1-buster"
+ARG VERSION="3.1.2-buster"
 FROM ruby:${VERSION}
 
 ARG RAILS_ROOT=/Rails
@@ -9,23 +9,6 @@ RUN set -x \
 RUN set -x \
   && apt-get update \
   && apt-get install -y nodejs locales default-mysql-client
-
-# RUN set -x \
-#   && apt-get update \
-#   && apt-get install -y nodejs locales lsb-release \
-#   && apt remove -y libmariadb-dev-compat libmariadb-dev
-
-# RUN wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-common_8.0.20-1debian10_amd64.deb \
-#     https://dev.mysql.com/get/Downloads/MySQL-8.0/libmysqlclient21_8.0.20-1debian10_amd64.deb \
-#     https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-community-client-core_8.0.20-1debian10_amd64.deb \
-#     https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-community-client_8.0.20-1debian10_amd64.deb \
-#     https://dev.mysql.com/get/Downloads/MySQL-8.0/libmysqlclient-dev_8.0.20-1debian10_amd64.deb
-
-# RUN dpkg -i mysql-common_8.0.20-1debian10_amd64.deb \
-#     libmysqlclient21_8.0.20-1debian10_amd64.deb \
-#     mysql-community-client-core_8.0.20-1debian10_amd64.deb \
-#     mysql-community-client_8.0.20-1debian10_amd64.deb \
-#     libmysqlclient-dev_8.0.20-1debian10_amd64.deb
 
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait 
 
